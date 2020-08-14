@@ -31,7 +31,7 @@ public class CubeController : MonoBehaviour {
         }
 	}
 
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D other)
     {
 
          bool isGound = (transform.position.y > -3.0) ? false : true;
