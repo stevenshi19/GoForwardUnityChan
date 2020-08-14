@@ -28,19 +28,17 @@ public class CubeController : MonoBehaviour {
         //画面外に出たら破棄する
         if(transform.position.x < this.deadLine){
             Destroy(gameObject);
+
         }
 	}
 
     void OnCollisionEnter2D(Collision2D other)
     {
-
-         bool isGound = (transform.position.y > -3.0) ? false : true;
-
         if (other.gameObject.tag == "Blocktag") { GetComponent<AudioSource>().Play(); }
 
-        if (isGound == true) { GetComponent<AudioSource>().volume = 1; }
-        
-        else { GetComponent<AudioSource>().volume = 0; }
-       
+        if (other.gameObject.tag == "Groundtag") { GetComponent<AudioSource>().Play(); }
+
+        //else { GetComponent<AudioSource>().volume = 0; }
+
     }
 }
